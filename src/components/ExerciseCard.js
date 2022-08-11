@@ -13,7 +13,7 @@ const ExerciseCard = ({key,exercise}) => {
             <Button sx={{ml:'21px',color:'#fff',background:'#ffa9a9' ,fontSize:'14px',borderRadius:'20px' ,textTransform:'capatilize'}}>{exercise.bodyPart}</Button>
             <Button sx={{ml:'21px',color:'#fff',background:'#ffcc75' ,fontSize:'14px',borderRadius:'20px' ,textTransform:'capatilize'}}>{exercise.target}</Button>
         </Stack>
-        <Typography>
+        <Typography color="#000" ml="21px" fontWeight="bold" mt="11px" pb="10px" textTransform="capitalize" fontSize="22px" >
             {exercise.name}
         </Typography>
     </Link>

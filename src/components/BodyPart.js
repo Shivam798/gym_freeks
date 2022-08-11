@@ -14,6 +14,7 @@ const BodyPart = ({bodyPart,item,setBodyPart}) => {
         justifyContent="center"
         className='bodyPart-card'
         sx={{
+            
             borderTop: bodyPart===item ? "4px solid #ff2625":"",
             backgroundColor:"#fff",
             borderBottomLeftRadius:"20px",

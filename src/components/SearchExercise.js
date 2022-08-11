@@ -6,9 +6,9 @@ import { exerciseOptions,fetchData } from '../util/fetchData'
 
 
 
-const SearchExercise = () => {
+const SearchExercise = ({ setExercises,bodyPart,setBodyPart}) => {
     const [search, setSearch] = useState("")
-    const [exercises, setExercises] = useState([]);
+    
     const [bodyParts, setBodyParts] = useState([])
 
     useEffect(() => {
@@ -17,13 +17,14 @@ const SearchExercise = () => {
             setBodyParts(['all',...bodyPartsData]);
             
         }
+        fetchExercisesData();
     }, [])
     
 
     const handSearch= async () =>{
         if (search){
             const exerciseData = await fetchData('https://exercisedb.p.rapidapi.com/exercises',exerciseOptions);
-            console.log(exerciseData)
+            // console.log(exerciseData)
             const searchExercises= exerciseData.filter(
                 (exercise) => exercise.name.toLowerCase().includes(search) 
                     || exercise.target.toLowerCase().includes(search) 
@@ -99,9 +100,14 @@ const SearchExercise = () => {
 
           </Box>
           <Box sx={{position:"relative",width:'100%',p:"20px"}}
-                // <HorizontalScrollbar data={bodyParts}/>
+                
             >
+                <HorizontalScrollbar 
+                    data={bodyParts}
+                    bodyPart={bodyPart}
+                    setBodyPart={setBodyPart}
 
+                />
           </Box>
 
       </Stack>

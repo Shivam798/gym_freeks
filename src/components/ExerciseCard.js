@@ -6,7 +6,7 @@ import { Button,Typography,Stack } from '@mui/material'
 const ExerciseCard = ({key,exercise}) => {
     // console.log(exercise)
   return (
-    <Link className='exercise-card' to={`/exercise/${exercise.id}`}>
+    <Link className='exercise-card' onClick={()=>{window.scrollTo({top:0,left:100, behavior:'auto' })}} to={`/exercise/${exercise.id}`} >
         
         <img src={exercise.gifUrl} alt={exercise.name} Loading="lazy"></img>
         <Stack direction="row">

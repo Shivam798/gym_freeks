@@ -14,7 +14,7 @@ const ExerciseVideos = ({exerciseVideos,name}) => {
       <Stack justifyContent="flex-start" flexWrap="wrap" alignItems="center"
         sx={{
           flexDirection:{lg:'row'},
-          gap:{lg:'110px',xs:'0'}
+          gap:{lg:'110px',xs:'0px'}
         }}
       >
         {exerciseVideos?.slice(0,6).map((item,index)=>(
@@ -25,15 +25,18 @@ const ExerciseVideos = ({exerciseVideos,name}) => {
             target="blank"
             rel="noreferrer"
           >
-            <img src={item.video.thumbnails[0].url} alt={item.video.title} />
+            
+            <img style={{ borderTopLeftRadius: '20px',width:'300px' ,height:'300px' }} src={item.video.thumbnails[0].url} alt={item.video.title} />
             <Box>
-              <Typography variant ="h5" color="#000">
+              <Typography variant ="h5" color="#000" >
                 {item.video.title}
               </Typography>
               <Typography variant ="h5" color="#000">
                 {item.video.channelName}
               </Typography>
             </Box>
+            
+            
 
           </a>
         ))}
